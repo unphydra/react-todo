@@ -1,6 +1,7 @@
 .main_container {
   display: flex;
   justify-content: space-around;
+  font-family: sans-serif;
 }
 
 .item {
@@ -22,6 +23,11 @@
   font-size: x-large;
 }
 
-input {
+.itemInput {
   font-size: x-large;
+}
+
+.heading {
+  font-size: xx-large;
+  font-weight: 600;
 }

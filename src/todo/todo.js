@@ -56,7 +56,10 @@ class Todo extends React.Component {
       <div>
         <h1>Todo</h1>
         {items}
-        <Input handleInput={this.handleInput}></Input>
+        <Input
+          className="itemInput"
+          handleInput={this.handleInput}
+        ></Input>
       </div>
     );
   }

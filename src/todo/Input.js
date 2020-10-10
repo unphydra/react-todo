@@ -23,6 +23,7 @@ class Input extends React.Component {
   render() {
     return (
       <input
+        className={this.props.className}
         value={this.state.value}
         onKeyDown={(event) => this.handleKeyPress(event.key)}
         onChange={(event) => this.handleChange(event.target.value)}
