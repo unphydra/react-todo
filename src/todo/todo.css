@@ -1,0 +1,22 @@
+.main_container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.indicator {
+  width: 10px;
+  height: 25px;
+  pointer-events: none;
+}
+
+.title {
+  pointer-events: none;
+  margin-left: 5px;
+}
