@@ -1,16 +1,7 @@
 import React from 'react';
 import Item from './Item';
 import Input from './Input';
-
-const itemState = {
-  notDone: { colour: 'lightblue', decoration: 'none' },
-  doing: { colour: 'orange', decoration: 'none' },
-  done: { colour: 'mediumseagreen', decoration: 'line-through' },
-};
-
-itemState.notDone.next = itemState.doing;
-itemState.doing.next = itemState.done;
-itemState.done.next = itemState.notDone;
+import itemState from './itemState';
 
 class Todo extends React.Component {
   constructor(props) {
