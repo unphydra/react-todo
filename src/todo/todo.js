@@ -1,8 +1,5 @@
 import React from 'react';
 
-//each item -> {name: 'banana', id:<number> checked: False}
-//list -> [item1, item2]
-
 const itemState = {
   notDone: { colour: 'mediumseagreen', decoration: 'none' },
   doing: { colour: 'orange', decoration: 'none' },
