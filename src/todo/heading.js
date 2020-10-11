@@ -1,5 +1,6 @@
 import React from 'react';
 import Input from './Input';
+import Delete from './delete';
 
 class Heading extends React.Component {
   constructor(props) {
@@ -27,8 +28,14 @@ class Heading extends React.Component {
         handleInput={this.handleChange}
       ></Input>
     ) : (
-      <div className={'heading heading2'} onClick={this.handleClick}>
-        {this.props.title}
+      <div className={'heading heading2'}>
+        <div style={{ width: '280px' }} onClick={this.handleClick}>
+          {this.props.title}
+        </div>
+        <Delete
+          className="headingDelete"
+          onDelete={this.props.onDelete}
+        ></Delete>
       </div>
     );
   }

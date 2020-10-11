@@ -16,7 +16,8 @@ class Todo extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
+    this.handleItemDelete = this.handleItemDelete.bind(this);
+    this.handleTodoDelete = this.handleTodoDelete.bind(this);
   }
 
   handleClick(id) {
@@ -43,12 +44,16 @@ class Todo extends React.Component {
     this.setState(() => ({ list, title: name }));
   }
 
-  handleDelete(id) {
+  handleItemDelete(id) {
     const list = this.state.list.slice();
     const title = this.state.title;
     const index = list.findIndex((l) => l.id === +id);
     list.splice(index, 1);
     this.setState(() => ({ list, title }));
+  }
+
+  handleTodoDelete() {
+    this.setState(() => ({ title: 'Todo', list: [] }));
   }
 
   render() {
@@ -59,7 +64,7 @@ class Todo extends React.Component {
         id={item.id}
         todoState={item.todoState}
         onClick={this.handleClick}
-        onDelete={this.handleDelete}
+        onDelete={this.handleItemDelete}
       ></Item>
     ));
 
@@ -68,6 +73,7 @@ class Todo extends React.Component {
         <Heading
           title={this.state.title}
           onChange={this.handleTitleChange}
+          onDelete={this.handleTodoDelete}
         ></Heading>
         {items}
         <Input
