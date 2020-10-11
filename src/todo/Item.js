@@ -7,20 +7,23 @@ const Item = ({ text, onClick, todoState, id }) => {
       id={id}
       onClick={(event) => onClick(event.target.id)}
     >
-      <div
-        className="indicator"
-        style={{
-          backgroundColor: todoState.colour,
-        }}
-      ></div>
-      <div
-        className="title"
-        style={{
-          textDecorationLine: todoState.decoration,
-        }}
-      >
-        {text}
+      <div className="flex-row">
+        <div
+          className="indicator"
+          style={{
+            backgroundColor: todoState.colour,
+          }}
+        ></div>
+        <div
+          className="title"
+          style={{
+            textDecorationLine: todoState.decoration,
+          }}
+        >
+          {text}
+        </div>
       </div>
+      <div className="delete">x</div>
     </div>
   );
 };
