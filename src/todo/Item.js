@@ -1,4 +1,5 @@
 import React from 'react';
+import Delete from './delete.js';
 
 const Item = ({ text, onClick, todoState, id, onDelete }) => {
   return (
@@ -23,9 +24,7 @@ const Item = ({ text, onClick, todoState, id, onDelete }) => {
           {text}
         </div>
       </div>
-      <div className="delete" onClick={() => onDelete(id)}>
-        x
-      </div>
+      <Delete className={'delete'} onDelete={onDelete} id={id}></Delete>
     </div>
   );
 };
