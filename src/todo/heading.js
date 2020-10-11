@@ -1,5 +1,5 @@
 import React from 'react';
-import Input from './Input';
+import Input from './input';
 import Delete from './delete';
 
 class Heading extends React.Component {

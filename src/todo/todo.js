@@ -1,8 +1,8 @@
 import React from 'react';
-import Item from './Item';
-import Input from './Input';
+import Input from './input';
 import itemState from './itemState';
 import Heading from './heading';
+import Items from './items';
 
 class Todo extends React.Component {
   constructor(props) {
@@ -57,17 +57,6 @@ class Todo extends React.Component {
   }
 
   render() {
-    const items = this.state.list.map((item) => (
-      <Item
-        text={item.name}
-        key={item.id}
-        id={item.id}
-        todoState={item.todoState}
-        onClick={this.handleClick}
-        onDelete={this.handleItemDelete}
-      ></Item>
-    ));
-
     return (
       <div className="main_container">
         <Heading
@@ -75,7 +64,11 @@ class Todo extends React.Component {
           onChange={this.handleTitleChange}
           onDelete={this.handleTodoDelete}
         ></Heading>
-        {items}
+        <Items
+          items={this.state.list}
+          handleClick={this.handleClick}
+          handleItemDelete={this.handleItemDelete}
+        ></Items>
         <Input
           className="itemInput"
           handleInput={this.handleInput}
