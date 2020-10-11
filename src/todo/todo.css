@@ -32,10 +32,18 @@
 .title {
   pointer-events: none;
   margin-left: 5px;
+  width: 270px;
 }
 
 .delete {
   opacity: 0.5;
+  display: none;
+  width: 20px;
+  text-align: right;
+}
+
+.item:hover .delete {
+  display: block;
 }
 
 .itemInput {

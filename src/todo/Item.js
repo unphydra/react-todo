@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Item = ({ text, onClick, todoState, id }) => {
+const Item = ({ text, onClick, todoState, id, onDelete }) => {
   return (
-    <div
-      className="item"
-      id={id}
-      onClick={(event) => onClick(event.target.id)}
-    >
-      <div className="flex-row">
+    <div className="item">
+      <div
+        className="flex-row"
+        id={id}
+        onClick={(event) => onClick(event.target.id)}
+      >
         <div
           className="indicator"
           style={{
@@ -23,7 +23,9 @@ const Item = ({ text, onClick, todoState, id }) => {
           {text}
         </div>
       </div>
-      <div className="delete">x</div>
+      <div className="delete" onClick={() => onDelete(id)}>
+        x
+      </div>
     </div>
   );
 };

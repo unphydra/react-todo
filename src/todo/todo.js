@@ -16,6 +16,7 @@ class Todo extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleClick(id) {
@@ -42,6 +43,14 @@ class Todo extends React.Component {
     this.setState(() => ({ list, title: name }));
   }
 
+  handleDelete(id) {
+    const list = this.state.list.slice();
+    const title = this.state.title;
+    const index = list.findIndex((l) => l.id === +id);
+    list.splice(index, 1);
+    this.setState(() => ({ list, title }));
+  }
+
   render() {
     const items = this.state.list.map((item) => (
       <Item
@@ -50,6 +59,7 @@ class Todo extends React.Component {
         id={item.id}
         todoState={item.todoState}
         onClick={this.handleClick}
+        onDelete={this.handleDelete}
       ></Item>
     ));
 
