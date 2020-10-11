@@ -1,13 +1,9 @@
 import React from 'react';
 import Todo from './todo/todo.js';
-import TodoCss from './todo/todo.css';
+import './todo/todo.css';
 
 function App() {
-  return (
-    <div className="main_container">
-      <Todo></Todo>
-    </div>
-  );
+  return <Todo></Todo>;
 }
 
 export default App;

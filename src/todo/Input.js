@@ -3,7 +3,7 @@ import React from 'react';
 class Input extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: '' };
+    this.state = { value: props.text ? props.text : '' };
 
     this.handleInput = props.handleInput;
     this.handleChange = this.handleChange.bind(this);
