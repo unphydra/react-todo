@@ -1,6 +1,15 @@
 import React from 'react';
 import Delete from './delete.js';
 
+const Indicator = (className, colour) => (
+  <div
+    className={className}
+    style={{
+      backgroundColor: colour,
+    }}
+  ></div>
+);
+
 const Item = ({ text, onClick, todoState, id, onDelete }) => {
   return (
     <div className="item">
@@ -9,12 +18,10 @@ const Item = ({ text, onClick, todoState, id, onDelete }) => {
         id={id}
         onClick={(event) => onClick(event.target.id)}
       >
-        <div
+        <Indicator
           className="indicator"
-          style={{
-            backgroundColor: todoState.colour,
-          }}
-        ></div>
+          colour={todoState.colour}
+        ></Indicator>
         <div
           className="title"
           style={{
